@@ -142,6 +142,7 @@ import java.util.Scanner;
             rightListCounts.put(location, rightListCounts.getOrDefault(location, 0) + 1);
         }
 
+        // Walk through each value in the Left List and multiply it by that location IDs' count in the right list
         for (int i = 0; i < leftLocationList.size(); i++) {
             int location = leftLocationList.get(i);
             similarityScore += (location * rightListCounts.getOrDefault(location, 0));
