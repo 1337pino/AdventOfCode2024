@@ -178,9 +178,7 @@ import java.util.Scanner;
      * @param rightList List structure for storing the numbers list on the right side of each line
      */
     private static void scanLocationListsFile(File inputFile, List<Integer> leftList, List<Integer> rightList) {
-        Scanner intTokenizer = null;
-        try {
-            intTokenizer = new Scanner(inputFile);
+        try (Scanner intTokenizer = new Scanner(inputFile)) {
 
             while (intTokenizer.hasNextLine()) {
                 leftList.add(intTokenizer.nextInt());
@@ -188,8 +186,6 @@ import java.util.Scanner;
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } finally {
-            intTokenizer.close();
         }
     }
  }
