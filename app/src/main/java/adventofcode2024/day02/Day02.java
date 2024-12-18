@@ -1,6 +1,6 @@
 package adventofcode2024.day02;
 
-/* Day 1: Red-Nosed Reports (https://adventofcode.com/2024/day/2)
+/* Day 2: Password Philosophy (https://adventofcode.com/2024/day/2)
 
 --- Part One ---
 Fortunately, the first location The Historians want to search isn't a long walk from the Chief Historian's office.
@@ -95,6 +95,7 @@ import java.util.StringTokenizer;
      * as integers and separated by a space
      * @param useProblemDampener If true, a given report can be safe if ignoring a single bad level makes the rest of 
      * the report safe
+     * @return the count of safe reports
      */
     public static int getReportSafetyCount(File reportsFile, boolean useProblemDampener) {
         int count = 0;
@@ -125,6 +126,7 @@ import java.util.StringTokenizer;
      * @param levels a list of levels representing a report
      * @param enableProblemDampener If true, a report is safe if ignoring a single bad level makes the rest of the 
      * report safe
+     * @return true if the report is safe, false otherwise
      */
     public static boolean isReportSafe(List<Integer> levels, boolean enableProblemDampener) {
         if (enableProblemDampener) {
@@ -144,6 +146,7 @@ import java.util.StringTokenizer;
      * Evaulates if the report is safe.
      * @param levels a list of levels representing a report
      * @param ignoredIndex index of a level in the report that is ignored during evaluation
+     * @return true if the report is safe, false otherwise
      */
     public static boolean isReportSafe(List<Integer> levels, int ignoredIndex) {
         int levelAIndex = 0, levelBIndex = 1;
